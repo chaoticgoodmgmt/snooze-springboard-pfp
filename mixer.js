@@ -1,8 +1,6 @@
 (function() {
     console.log("Script loaded");
 
-    let audioContext;
-
     function loadBuffer(source, context, fn) {
         console.log("Loading buffer for source:", source);
         var request = new XMLHttpRequest();
@@ -26,11 +24,16 @@
         request.send();
     }
 
-    function getAudioContext() {
-        if (!audioContext) {
-            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    function audioCtx() {
+        var audioCtx = (window.AudioContext || window.webkitAudioContext ||
+            window.mozAudioContext || window.oAudioContext ||
+            window.msAudioContext);
+        if (audioCtx) {
+            return new audioCtx();
+        } else {
+            alert('Web Audio not supported in this browser. Please use a modern browser such as Chrome or Firefox');
+            return;
         }
-        return audioContext;
     }
 
     function Filter(ctx, type, frequency, gain, q) {
@@ -188,7 +191,7 @@
     function Daw() {
         console.log("Initializing DAW");
         var self = this;
-        this.ctx = getAudioContext();
+        this.ctx = audioCtx();
         this.tracks = [];
         this.buffered = 0;
         this.bufferTracks(function() {
@@ -488,13 +491,7 @@
 
     function init() {
         console.log("Page loaded, initializing DAW");
-        $('#startButton').on('click', function() {
-            getAudioContext().resume().then(() => {
-                console.log('AudioContext resumed');
-                new Daw();
-                $('#startButton').hide();
-            });
-        });
+        new Daw();
     }
 
     var sources = [
