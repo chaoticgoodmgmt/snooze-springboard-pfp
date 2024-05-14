@@ -199,7 +199,7 @@
             self.mixer = new Mixer(self.ctx, self.tracks);
             self.hideLoader();
             self.showMixer();
-            $('#play').click();
+            $('#pause').click(); // Default to pause button
             self.initHints();
         });
     }
