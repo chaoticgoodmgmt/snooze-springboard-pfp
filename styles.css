@@ -2,7 +2,7 @@
     font-family:'digi';
     src: url(fonts/digital-7_mono-webfont.eot);
     src: url(fonts/digital-7_mono-webfont.eot?#iefix) format("embedded-opentype"),
-         url(fonts/digital-7_mono-webfont.woff) format("woff"),
+         url(fonts/digital-7_mono-webfont.woff2) format("woff2"),
          url(fonts/digital-7_mono-webfont.ttf) format("truetype"),
          url(fonts/digital-7_mono-webfont.svg#webfont) format("svg");
 }
