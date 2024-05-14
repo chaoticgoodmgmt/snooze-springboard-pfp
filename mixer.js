@@ -199,7 +199,7 @@
             self.mixer = new Mixer(self.ctx, self.tracks);
             self.hideLoader();
             self.showMixer();
-            $('#pause').click(); // Default to pause button
+            $('#pause').addClass('on'); // Default to pause button
             self.initHints();
         });
     }
@@ -304,7 +304,7 @@
         this.offset = 0;
         this.start = 0;
         this.timer = new Timer();
-        $('#mixer').append('<div id="transport"><h1><span>&#9835; Web Audio</span> mixer</h1><div id="display"><div id="time-min">00</div><span>:</span><div id="time-secs">00</div><span>:</span><div id="time-milli">00</div><div class="clear"></div></div><div class="controls"><button id="play">&#9658;</button><button id="pause">||</button></div></div>');
+        $('#mixer').append('<div id="transport"><h1><span>&#9835; Web Audio</span> mixer</h1><div id="display"><div id="time-min">00</div><span>:</span><div id="time-secs">00</div><span>:</span><div id="time-milli">00</div><div class="clear"></div></div><div class="controls"><button id="play">&#9658;</button><button id="pause" class="on">||</button></div></div>');
         $('#play').on('click', function() {
             var el = $(this);
             $('#transport .controls button').removeClass('on');
@@ -503,3 +503,4 @@
     var rotaryKnobTemplate = '<div class="dial-container"><div class="notches"></div><div class="dial"><div class="dial-inner"></div></div></div>';
     window.addEventListener('load', init, false);
 })();
+s
