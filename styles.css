@@ -15,8 +15,35 @@
 body {
     font-family: arial, sans-serif;
     background: #2e302f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
+#loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    font-size: 20px;
+}
+
+#loader img {
+    width: 66px;
+    margin-bottom: 20px;
+}
+
+#mixer {
+    display: none;
+    position: relative;
+    margin: 20px 5%;
+    width: 90%;
+    float: left;
+    box-shadow: 0 10px 100px #000;
+}
 #container {
     width: 100%;
     min-width: 1000px;
