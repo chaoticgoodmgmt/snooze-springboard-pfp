@@ -495,12 +495,11 @@
     }
 
     var sources = [
-        'Acous_Gtr.mp3', 'Strings.mp3', 'Bass_&_Drums.mp3', 'Mellotron.mp3',
-        'Bck_vox.mp3', 'Stylophone.mp3', 'Vox.mp3', 'Flute_&_Cello.mp3'
+        'bey vox.mp3', 'me, myself and i instrumental.mp3', 'snooze instrumental.mp3', 'sza vox.mp3',
+       
     ];
 
     var channelTemplate = '<div class="channel"></div>';
     var rotaryKnobTemplate = '<div class="dial-container"><div class="notches"></div><div class="dial"><div class="dial-inner"></div></div></div>';
     window.addEventListener('load', init, false);
 })();
-s
