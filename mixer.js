@@ -489,7 +489,7 @@
     function init() {
         console.log("Page loaded, initializing DAW");
         $('#startButton').on('click', function() {
-            audioContext.resume().then(() => {
+            getAudioContext().resume().then(() => {
                 console.log('AudioContext resumed');
                 new Daw();
                 $('#startButton').hide();
